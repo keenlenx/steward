@@ -1,0 +1,163 @@
+﻿<!Doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Steward!</title>
+</head>
+<body class="container" align="center">
+    <img class="img-fluid" src="churchlogo.jpeg" style="height:200px;width:200px" />
+    <h2 style="color:deepskyblue">LAVINGTON </h2>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <form id="giving-form" action="_submit();">
+        <div class="" style="color:brown"><strong>TITHE AND OFFERING</strong></div>
+        <table class="table table-bordered col-sm">
+
+            <tbody>
+                <tr>
+
+                    <td colspan="2"><strong>CENTRAL KENYA CONFERENCE</strong></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        MEMBERSHIP
+                    </td>
+                    <td>
+                        <select id="membership" class="form-control" aria-label="Membership">
+                            <option value="guest">Guest</option>
+                            <option value="westlands">Westlands SS </option>
+                            <option value="jamhuri">Jamhuri SS</option>
+                            <option value="lavington">Lavington</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        God's Holy Tithe (10%)
+                    </td>
+                    <td><input type="text" id="tithe" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Sabbath School
+                    </td>
+                    <td><input type="text" id="sabbathschool" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Evangelism/Missionary
+                    </td>
+                    <td><input type="text" id="evangelism" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <strong> LOCAL CHURCH BUDGET</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Church Expenses
+                    </td>
+                    <td><input type="text" id="expenses" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Building Fund
+                    </td>
+                    <td><input type="text" id="building" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Youth Fund
+                    </td>
+                    <td><input type="text" id="youth" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong> GENERAL CONFERENCE </strong>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Camp Meeting Offering
+                    </td>
+                    <td><input type="text" id="campoffering" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Camp Meeting Budget
+                    </td>
+                    <td><input type="text" id="campbudget" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Good Samaritan
+                    </td>
+                    <td><input type="text" id="gdsamaritan" class="form-control" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <strong> TOTAL ENCLOSED</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="text" class="form-control" placeholder="TOTAL " aria-label="Total" disabled></td>
+                </tr>
+                <tr>
+                    <td>
+                        PHONE
+                    </td>
+                    <td><input type="text" class="form-control" placeholder="MPESA" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><input type="submit" class="btn btn-primary" value="CHECKOUT" /></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+
+</body>
+</html>
+<script>
+
+    var tithe = document.getElementById("tithe");
+    var sabbathschool = document.getElementById("sabbathschool");
+    var evangelism = document.getElementById("evangelism");
+    var expenses = document.getElementById("expenses");
+    var building = document.getElementById("building");
+    var youth = document.getElementById("youth");
+    var campoffering = document.getElementById("campoffering");
+    var campbudget = document.getElementById("campbudget");
+    var gdsamaritan = document.getElementById("gdsamaritan");
+    var membership = document.getElementById("membership");
+
+    function _checkout() {
+
+    }
+
+</script>
