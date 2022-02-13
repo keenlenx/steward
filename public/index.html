@@ -1,4 +1,4 @@
-﻿<!Doctype html>
+<!Doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -8,7 +8,6 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="seventh-day-adventist-logo.png" type="image/gif" sizes="32x32">
-    <script async src="//jsfiddle.net/fuzzybugs/f5dpwfbf/embed/"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Steward!</title>
 </head>
@@ -25,9 +24,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-    <form id="giving-form" class="form-control"onsubmit="_checkout();" method="post">
+    <form id="giving-form" class="container-fluid" onsubmit="sendstk()" method="post" target="">
         <div class=""  style="color:brown" ><strong>TITHE AND OFFERING</strong></div>
-        <table class="table table-bordered col-sm">
+        <table class="table table-bordered col-sm5">
 
             <tbody>
                 <tr>
@@ -59,7 +58,7 @@
                     <td>
                         Sabbath School
                     </td>
-                    <td><input type="text" onblur="findTotal()" id="sabbathschool"class="amount" placeholder="KES" aria-label="Amount"></td>
+                    <td><input type="text" onblur="findTotal()" id="sabbathschool" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
                 </tr>
 
                 <tr>
@@ -78,7 +77,7 @@
                     <td>
                         Church Expenses
                     </td>
-                    <td><input type="text" onblur="findTotal()" id="expenses"class="amount" placeholder="KES" aria-label="Amount"></td>
+                    <td><input type="text" onblur="findTotal()" id="expenses" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
                 </tr>
                 <tr>
                     <td>
@@ -125,13 +124,13 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="text" id="totalsum"onblur="findTotal()" class="form-control" placeholder="TOTAL " aria-label="Total" disabled></td>
+                    <td><input type="text" id="totalsum" onblur="findTotal()" class="form-control" placeholder="TOTAL " aria-label="Total" disabled></td>
                 </tr>
                 <tr>
                     <td>
                         PHONE
                     </td>
-                    <td><input type="text"  class="form-control" placeholder="MPESA" aria-label="Amount"></td>
+                    <td><input type="text" id="mobile_no" class="form-control" value="254" min="11" aria-label="phone"></td>
                 </tr>
                 <tr>
                     <td> </td>
@@ -145,24 +144,9 @@
 </body>
 </html>
 <script>
-
- 
-
-    function _checkout() {
-        var tithe = Number(document.getElementById("tithe").value);
-        var sabbathschool = Number(document.getElementById("sabbathschool").value);
-        var evangelism =Number( document.getElementById("evangelism").value);
-        var expenses =Number( document.getElementById("expenses").value);
-        var building =Number( document.getElementById("building").value);
-        var youth =Number( document.getElementById("youth").value);
-        var campoffering =Number( document.getElementById("campoffering").value);
-        var campbudget =Number( document.getElementById("campbudget").value);
-        var gdsamaritan =Number( document.getElementById("gdsamaritan").value);
-        var membership =Number( document.getElementById("membership").value);
-        var sum = tithe + sabbathschool + evangelism + expenses + building + youth + campbudget + campoffering + gdsamaritan;
-        alert('Checkout KES. '+sum+' on your phone ');
-    }
+    
     function findTotal() {
+        
         var arr = document.getElementsByClassName('amount');
         var tot = 0;
         for (var i = 0; i < arr.length; i++) {
@@ -171,4 +155,19 @@
         }
         document.getElementById('totalsum').value = tot;
     }
+   
+    function sendstk() {
+        p = document.getElementById('mobile_no').value;
+        phone = 254 + (p.substr(-9));
+        pesa = document.getElementById('totalsum').value;
+                
+        setTimeout(function () {
+            window.location.href = 'https://romeofoxalpha.co.ke/carwash/stkpush.php?phone=' + phone + '&amount=' + pesa;
+        }, 0);
+        
+    }
+
+   
+     
+
 </script>
