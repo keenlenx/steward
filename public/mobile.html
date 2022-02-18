@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="icon" href="seventh-day-adventist-logo.png" type="image/gif" alt="logo" sizes="32x21">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Steward!</title>
+</head>
+<body class="container">
+    <div id="giving-id" class="container">
+        <form id="giving-form" method="POST" >
+
+
+            <!-- Example split danger button -->
+            <p id="lcb">
+                <div class="btn-group">
+
+                    <button type="button" class="btn ">Local Church Budget</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="">select</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item" id="ss-off">Sabbath School
+                        <li>
+                        <li class="dropdown-item" id="evangelism">Evangelism
+                        <li>
+                        <li class="dropdown-item" id="expense">Church Expense
+                        <li>
+                        <li class="dropdown-item" id="youth-fund">Youth Fund
+                        <li>
+                        <li class="dropdown-item" id="building-fund">Building Fund
+                        <li>
+                        <li class="dropdown-item" id="combined-off">Combined Offering
+                        <li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li class="dropdown-item" id="special-off">Special Offering
+                        <li>
+                    </ul>
+                </div>
+            </p>
+
+            <p id="ccb">
+                <div class="btn-group">
+                    <button type="button" class="btn ">Conference</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="">select</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item" id="camp-off">Camp Meeting Offering
+                        <li>
+                        <li class="dropdown-item" id="camp-budget">Camp Meeting Budget
+                        <li>
+                        <li class="dropdown-item" id="good-sam">Good Samaritan
+                        <li>
+                    </ul>
+                </div>
+            </p>
+
+            <div id="invoice" class="">
+                <ol>
+                    <content id="descr" class="col-2-sm">Descr</content>
+                    <content id="invoice-items" class="col-2-sm">Amount</content>
+                </ol>
+
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>
+<script type="text/javascript">
+    function description() {
+        $(document).on("click", ".dropdown-item", function () {
+            var clickedBtnID = $(this).attr('id'); // or var clickedBtnID = this.id
+            var getid = ("#" + clickedBtnID);
+            descr = $(getid).text();
+            //alert('you clicked on button '+ descr);
+            return descr;
+        });
+    }
+    $('.dropdown-item').click(function () {
+        descr = description();
+        var amount = prompt('Enter Amount for ' + descr);
+        $("#descr").before('<li>' + '' + descr);
+        $("#invoice-items").before( amount + '</li>');
+    });
+</script>

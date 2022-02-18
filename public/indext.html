@@ -1,0 +1,231 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="seventh-day-adventist-logo.png" type="image/gif" alt="logo" sizes="32x21">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Steward!</title>
+</head>
+
+<body class="container container-md" >
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="churchlogo.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                LAVINGTON SDA CHURCH
+            </a>
+        </div>
+    </nav>
+    <h2 style="color:deepskyblue"> </h2>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <form id="giving-form" class="container-fluid lilspace" method="POST" target="#">
+        <div class="" style="color:brown"><strong>TITHE AND OFFERING</strong></div>
+        <table class="table table-sm table-bordered col-sm5">
+            <thead>
+                CENTRAL KENYA CONFERENCE
+            </thead>
+            <tbody>
+                <tr>
+
+
+                    <td colspan="2"><i>For where your treasure is, there will your heart be also. Matthew 6.21.</i></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="">
+                        Bank Details
+                        Barclays Bank, Hurlingham Branch
+                        Acc Name: SDA Church, Lavington
+                        Operations: 202 584 7604
+                        Development: 202 584 7582
+                        USD: 202 584 7590
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        MEMBERSHIP
+                    </td>
+                    <td>
+                        <select id="membership" class="form-control" aria-label="Membership">
+                            <option value="guest">Guest</option>
+                            <option value="westlands">Westlands SS </option>
+                            <option value="jamhuri">Jamhuri SS</option>
+                            <option value="lavington">Lavington</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        NAME:
+                    </td>
+                    <td><input type="text" id="tithe" class="form-control amount" placeholder="FULL NAME" aria-label="full_name"></td>
+                </tr>
+                <tr>
+                    <td>
+                        God's Holy Tithe (10%)x
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="tithe" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Sabbath School
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="sabbathschool" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Evangelism/Missionary
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="evangelism" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <strong> LOCAL CHURCH BUDGET</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Church Expenses
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="expenses" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Building Fund
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="building" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Youth Fund
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="youth" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Combined offering
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="gdsamaritan" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <strong> GENERAL CONFERENCE </strong>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Camp Meeting Offering
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="campoffering" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Camp Meeting Budget
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="campbudget" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+                <tr>
+                    <td>
+                        Good Samaritan
+                    </td>
+                    <td><input type="text" onblur="findTotal()" id="gdsamaritan" class="form-control amount" placeholder="KES" aria-label="Amount"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <strong> TOTAL ENCLOSED</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="text" id="totalsum" onblur="findTotal()" class="form-control" placeholder="TOTAL " aria-label="Total" disabled></td>
+                </tr>
+                <tr>
+                    <td>
+                        PHONE
+                    </td>
+                    <td><input type="text" id="mobile_no" class="form-control" value="254" min="11" aria-label="phone"></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><input type="submit" class="btn btn-primary" value="CHECKOUT" /></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+
+</body>
+</html>
+<script>
+    
+    function findTotal() {
+        
+        var arr = document.getElementsByClassName('amount');
+        var tot = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseFloat(arr[i].value))
+                tot += parseFloat(arr[i].value);
+        }
+        document.getElementById('totalsum').value = tot;
+        return tot;
+    }
+   
+    function sendstk() {
+        p = document.getElementById('mobile_no').value;
+        phone = 254 + (p.substr(-9));
+        pesa = findTotal();
+        let url = 'https://romeofoxalpha.co.ke/carwash/stkpush.php?phone=' + phone + '&amount=' + pesa;
+        //encode the data on transit
+        let request = new XMLHttpRequest();
+        request.open('POST', url);
+        request.onload = function () {
+            
+            var res = JSON.parse(request.response);
+            if (res.ResponseCode == 0) {
+                alert('Request Sent...' + `${res.CustomerMessage}`);
+                $('#giving-form')[0].reset();
+            } 
+            else if (res.errorCode = '400') {
+                alert('Failed. Try again...'+`${res.errorMessage}`);
+            }
+            
+
+        };
+
+        request.send();
+       /* setTimeout(function () {
+            window.location.href = 'https://romeofoxalpha.co.ke/carwash/stkpush.php?phone=' + phone + '&amount=' + pesa;
+        }, 0);
+       */ 
+    }
+     
+    $("#giving-form").submit(function (event) {
+            sendstk();      
+        event.preventDefault();
+    });
+  
+</script>
